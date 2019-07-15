@@ -1,0 +1,11 @@
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Search in Rotated Sorted Array.deps.json
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Search in Rotated Sorted Array.runtimeconfig.json
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Search in Rotated Sorted Array.runtimeconfig.dev.json
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Search in Rotated Sorted Array.dll
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Search in Rotated Sorted Array.pdb
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Search in Rotated Sorted Array.csprojAssemblyReference.cache
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Search in Rotated Sorted Array.csproj.CoreCompileInputs.cache
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Search in Rotated Sorted Array.AssemblyInfoInputs.cache
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Search in Rotated Sorted Array.AssemblyInfo.cs
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Search in Rotated Sorted Array.dll
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Search in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Search in Rotated Sorted Array.pdb

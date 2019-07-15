@@ -15,7 +15,6 @@ namespace Binary_Tree_Level_Order_Traversal
       var res = new List<IList<int>>();
       Queue<TreeNode> queue = new Queue<TreeNode>();
       queue.Enqueue(root);
-      int depth = 1;
       while (queue.Count > 0)
       {
         var tmpRes = new List<int>();
@@ -30,7 +29,6 @@ namespace Binary_Tree_Level_Order_Traversal
           queue.Enqueue(tmp.left);
           queue.Enqueue(tmp.right);
         }
-        depth++;
         if (tmpRes.Count > 0)
           res.Add(tmpRes);
       }

@@ -1,0 +1,11 @@
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.deps.json
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.runtimeconfig.json
+C:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.runtimeconfig.dev.json
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.dll
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\bin\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.pdb
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.csprojAssemblyReference.cache
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.csproj.CoreCompileInputs.cache
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.AssemblyInfoInputs.cache
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.AssemblyInfo.cs
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.dll
+c:\Pleiades\workspaceLeetCode\LeetCodeCSharp\src\medium\Find Minimum in Rotated Sorted Array\obj\Debug\netcoreapp2.2\Find Minimum in Rotated Sorted Array.pdb
