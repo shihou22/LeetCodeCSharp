@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\hoge\\hoge.csproj",
-      "projectName": "hoge",
-      "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\hoge\\hoge.csproj",
+      "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Valid Parentheses\\Valid Parentheses.csproj",
+      "projectName": "Valid Parentheses",
+      "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Valid Parentheses\\Valid Parentheses.csproj",
       "packagesPath": "C:\\Users\\ryo.suzuki\\.nuget\\packages\\",
-      "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\hoge\\obj\\",
+      "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Valid Parentheses\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
