@@ -13,7 +13,62 @@ namespace Word_Ladder
         }
         public int LadderLength(string beginWord, string endWord, IList<string> wordList)
         {
+            if (beginWord == endWord || !wordList.Contains(endWord))
+                return 0;
+
+            HashSet<string> wkList = new HashSet<string>(wordList);
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue(beginWord);
+            var cnt = 1;
+            while (queue.Count > 0)
+            {
+                cnt++;
+                var max = queue.Count;
+                /*
+                現時点でQueueに詰まっているものだけ実行
+                動的に取得するとqueueを入れるたびに実行してしまうため。
+                こうすることで段階を把握することができる。
+                 */
+                for (int i = 0; i < max; i++)
+                {
+                    var baseWord = queue.Dequeue();
+                    IList<string> wk = GetNeighborsFromChar(baseWord, wkList);
+                    foreach (var item in wk)
+                    {
+                        if (item == endWord)
+                            return cnt;
+
+                        queue.Enqueue(item);
+                    }
+                }
+
+            }
+            return 0;
         }
+
+        private IList<string> GetNeighborsFromChar(string baseWord, HashSet<string> wkList)
+        {
+            IList<string> res = new List<string>();
+            char[] sample = baseWord.ToCharArray();
+            for (int i = 0; i < baseWord.Length; i++)
+            {
+                char c = sample[i];
+                for (int j = 0; j < 26; j++)
+                {
+                    sample[i] = Convert.ToChar('a' + j);
+                    string tmp = new String(sample);
+                    if (wkList.Contains(tmp))
+                    {
+                        res.Add(tmp);
+                        wkList.Remove(tmp);
+                    }
+                }
+                sample[i] = c;
+            }
+            return res;
+
+        }
+
         public int LadderLengthTle(string beginWord, string endWord, IList<string> wordList)
         {
             if (beginWord == endWord || !wordList.Contains(endWord))
