@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Increasing Subsequence\\Longest Increasing Subsequence.csproj": {}
+    "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Print in Order\\Print in Order.csproj": {}
   },
   "projects": {
-    "c:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Increasing Subsequence\\Longest Increasing Subsequence.csproj": {
+    "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Print in Order\\Print in Order.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Increasing Subsequence\\Longest Increasing Subsequence.csproj",
-        "projectName": "Longest Increasing Subsequence",
-        "projectPath": "c:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Increasing Subsequence\\Longest Increasing Subsequence.csproj",
+        "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Print in Order\\Print in Order.csproj",
+        "projectName": "Print in Order",
+        "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Print in Order\\Print in Order.csproj",
         "packagesPath": "C:\\Users\\ryo.suzuki\\.nuget\\packages\\",
-        "outputPath": "c:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Increasing Subsequence\\obj\\",
+        "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Print in Order\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
