@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Rotting_Oranges
+namespace Binary_Trees_With_Factors
 {
     class Program
     {
