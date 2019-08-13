@@ -30,25 +30,28 @@ namespace Matrix_Cells_in_Distance_Order
 
             que.Enqueue(new Coordinate(r0, c0));
             visited[r0, c0] = true;
+            int[] d = new int[] { 0, 1, 0, -1 };
             while (que.Count > 0)
             {
                 Coordinate current = que.Dequeue();
                 res.Add(new int[] { current.r, current.c });
-                AddQueue(R, C, current.r - 1, current.c, visited, que);
-                AddQueue(R, C, current.r + 1, current.c, visited, que);
-                AddQueue(R, C, current.r, current.c - 1, visited, que);
-                AddQueue(R, C, current.r, current.c + 1, visited, que);
+                for (int i = 0; i < d.Length; i++)
+                {
+                    int wkR = current.r + d[i];
+                    int wkC = current.c + d[i ^ 1];
+                    if (wkR >= 0 && wkR < R && wkC >= 0 && wkC < C && !visited[wkR, wkC])
+                    {
+                        que.Enqueue(new Coordinate(wkR, wkC));
+                        visited[wkR, wkC] = true;
+                    }
+                    // AddQueue(R, C, current.r - 1, current.c, visited, que);
+                    // AddQueue(R, C, current.r + 1, current.c, visited, que);
+                    // AddQueue(R, C, current.r, current.c - 1, visited, que);
+                    // AddQueue(R, C, current.r, current.c + 1, visited, que);
+                }
             }
             return res.ToArray();
         }
 
-        private void AddQueue(int R, int C, int wkR, int wkC, bool[,] visited, Queue<Coordinate> que)
-        {
-            if (wkR >= 0 && wkR < R && wkC >= 0 && wkC < C && !visited[wkR, wkC])
-            {
-                que.Enqueue(new Coordinate(wkR, wkC));
-                visited[wkR, wkC] = true;
-            }
-        }
     }
 }
