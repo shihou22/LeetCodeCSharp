@@ -17,7 +17,7 @@ namespace Repeated_String_Match
         public int RepeatedStringMatch(string A, string B)
         {
             string cur = A;
-            int index = 0;
+            int index = 1;
             while (cur.Length < B.Length)
             {
                 cur += A;
