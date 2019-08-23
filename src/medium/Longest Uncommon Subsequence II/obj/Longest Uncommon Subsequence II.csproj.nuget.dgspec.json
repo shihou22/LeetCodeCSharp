@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Uncommon Subsequence II\\Longest Uncommon Subsequence II.csproj": {}
+  },
+  "projects": {
+    "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Uncommon Subsequence II\\Longest Uncommon Subsequence II.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Uncommon Subsequence II\\Longest Uncommon Subsequence II.csproj",
+        "projectName": "Longest Uncommon Subsequence II",
+        "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Uncommon Subsequence II\\Longest Uncommon Subsequence II.csproj",
+        "packagesPath": "C:\\Users\\ryo.suzuki\\.nuget\\packages\\",
+        "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Longest Uncommon Subsequence II\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ryo.suzuki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
