@@ -7,7 +7,10 @@ namespace Longest_Uncommon_Subsequence_II
         static void Main(string[] args)
         {
             Solution solution = new Solution();
-            Console.WriteLine(solution.FindLUSlength(new string[] { "aba", "cdc", "eae" }));//3
+            // Console.WriteLine(solution.FindLUSlength(new string[] { "aba", "cdc", "eae" }));//3
+            // Console.WriteLine(solution.FindLUSlength(new string[] { "aba", "aba", "aba" }));//0
+            // Console.WriteLine(solution.FindLUSlength(new string[] { "aba", "bba", "abC" }));//3
+            Console.WriteLine(solution.FindLUSlength(new string[] { "aba", "bba", "baC" }));//1
             Console.WriteLine("Hello World!");
         }
         public int FindLUSlength(string[] strs)
@@ -16,8 +19,9 @@ namespace Longest_Uncommon_Subsequence_II
                 return strs.Length;
 
             string baseStr = strs[0];
-            foreach (var item in strs)
+            for (int i = 1; i < strs.Length; i++)
             {
+                string item = strs[i];
                 string wk1 = "";
                 string wk2 = "";
                 if (baseStr.Length > item.Length)
@@ -42,7 +46,7 @@ namespace Longest_Uncommon_Subsequence_II
                 return wk1;
 
             int index = wk2.IndexOf(wk1);
-            if (index < 0)
+            if (index >= 0)
             {
                 if (wk1.Length >= 2)
                 {
