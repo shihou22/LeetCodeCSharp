@@ -81,16 +81,6 @@ namespace Flower_Planting_With_No_Adjacent
             }
             return res;
         }
-        private int GetMax(int a, int b)
-        {
-            if (a != b)
-                return a;
-            if (a >= 4 || b >= 4)
-                return 1;
-            if (a > b)
-                return a + 1;
-            else
-                return b + 1;
-        }
+
     }
 }
