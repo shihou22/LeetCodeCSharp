@@ -16,12 +16,27 @@ namespace Squares_of_a_Sorted_Array
         }
         public int[] SortedSquares(int[] A)
         {
-            for (int i = 0; i < A.Length; i++)
+            int[] ret = new int[A.Length];
+            int i = 0;
+            int j = A.Length - 1;
+            int insI = A.Length - 1;
+            while (i <= j)
             {
-                A[i] = A[i] * A[i];
+                int left = Math.Abs(A[i]);
+                int right = Math.Abs(A[j]);
+                if (left > right)
+                {
+                    ret[insI] = A[i] * A[i];
+                    i++;
+                }
+                else
+                {
+                    ret[insI] = A[j] * A[j];
+                    j--;
+                }
+                insI--;
             }
-            Array.Sort(A);
-            return A;
+            return ret;
         }
         public int[] SortedSquaresOld(int[] A)
         {
