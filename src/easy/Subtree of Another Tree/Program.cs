@@ -38,19 +38,5 @@ namespace Subtree_of_Another_Tree
             var val2 = DFSFirst(root.right);
             return res + val1 + val2;
         }
-        private bool DFSSecond(TreeNode s, TreeNode t)
-        {
-            if (s == null && t == null)
-                return true;
-            if (s == null && t != null || s != null && t == null)
-                return false;
-
-            if (s.val != t.val)
-                return false;
-
-            var val1 = DFSSecond(s.left, t.left);
-            var val2 = DFSSecond(s.left, t.left);
-            return val1 && val2;
-        }
     }
 }
