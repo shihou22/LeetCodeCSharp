@@ -7,36 +7,59 @@ namespace Non_decreasing_Array
     {
         static void Main(string[] args)
         {
-            Program program = new Program();
+            Program program = new Program(); ;
             //true
             Console.WriteLine(program.CheckPossibility(new int[] { 4, 2, 3 }));
-            //false
+            // //false
             Console.WriteLine(program.CheckPossibility(new int[] { 4, 2, 1 }));
-            //false
+            // //true
             Console.WriteLine(program.CheckPossibility(new int[] { 2, 5, 3, 4 }));
+            //false
+            Console.WriteLine(program.CheckPossibility(new int[] { 3, 4, 2, 3 }));
+            //false
+            Console.WriteLine(program.CheckPossibility(new int[] { 3, 3, 2, 2 }));
+            //true
+            Console.WriteLine(program.CheckPossibility(new int[] { 2, 3, 3, 2, 4 }));
             Console.WriteLine("Hello World!");
         }
         public bool CheckPossibility(int[] nums)
         {
-
             if (nums.Length == 0 || nums.Length == 1)
                 return true;
             var cnt = 0;
-            HashSet<int> memo = new HashSet<int>();
-            for (int i = 0; i < nums.Length - 1; i++)
+            for (int i = 1; i < nums.Length; i++)
             {
-                memo.Add(nums[i]);
-                if (nums[i] > nums[i + 1])
+                if (nums[i - 1] > nums[i])
                 {
-                    int wk = nums[i] - 1;
-
-                    nums[i] = wk;
                     cnt++;
+                    if (i - 2 >= 0 && nums[i - 2] > nums[i])
+                        nums[i] = nums[i - 1];
+                    else
+                        nums[i - 1] = nums[i];
                 }
+                if (cnt > 1)
+                    return false;
             }
-            if (cnt > 1)
+            // if (cnt == 0)
+            //     return true;
+            // for (int i = 1; i < nums.Length; i++)
+            // {
+            //     if (nums[i - 1] > nums[i])
+            //     {
+            //         return false;
+            //     }
+            // }
+            return true;
+        }
+        private bool isIncreasing(int pre2, int pre1, int curr, int[] nums)
+        {
+            if (pre2 != pre1 && pre2 > nums[curr])
                 return false;
-
+            for (int i = curr; i < nums.Length - 1; i++)
+            {
+                if (nums[i] > nums[i + 1])
+                    return false;
+            }
             return true;
         }
     }
