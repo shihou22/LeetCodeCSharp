@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Element_Appearing_More_Than_25__In_Sorted_Array</RootNamespace>
+  </PropertyGroup>
+
+</Project>

@@ -51,16 +51,5 @@ namespace Non_decreasing_Array
             // }
             return true;
         }
-        private bool isIncreasing(int pre2, int pre1, int curr, int[] nums)
-        {
-            if (pre2 != pre1 && pre2 > nums[curr])
-                return false;
-            for (int i = curr; i < nums.Length - 1; i++)
-            {
-                if (nums[i] > nums[i + 1])
-                    return false;
-            }
-            return true;
-        }
     }
 }
