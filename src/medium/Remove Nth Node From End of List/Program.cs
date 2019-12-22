@@ -18,6 +18,26 @@ namespace Remove_Nth_Node_From_End_of_List
     {
       Console.WriteLine("Hello World!");
     }
+    public ListNode RemoveNthFromEnd2(ListNode head, int n)
+    {
+      if (head.next == null) return null;
+      ListNode dummy = new ListNode(0);
+      dummy.next = head;
+      ListNode f = dummy;
+      ListNode s = dummy;
+      while (f != null)
+      {
+        if (n == -1)
+          s = s.next;
+        else
+          n--;
+
+        f = f.next;
+        Console.WriteLine("n:" + n);
+      }
+      s.next = s.next.next;
+      return dummy.next;
+    }
     public ListNode RemoveNthFromEnd(ListNode head, int n)
     {
       IList<ListNode> nodes = new List<ListNode>();
