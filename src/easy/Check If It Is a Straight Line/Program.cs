@@ -8,7 +8,22 @@ namespace Check_If_It_Is_a_Straight_Line
         {
             Console.WriteLine("Hello World!");
         }
-        public bool CheckStraightLine(int[][] coordinates)
+        public bool checkStraightLine(int[][] coordinates)
+        {
+            if (coordinates.Length <= 2)
+                return true;
+
+            double m = (double)((coordinates[1][1] - coordinates[0][1]) / (coordinates[1][0] - coordinates[0][0]));
+            double c = coordinates[0][1] - m * coordinates[0][0];
+
+            for (int i = 2; i < coordinates.Length; i++)
+            {
+                if (coordinates[i][1] != (int)(m * coordinates[i][0] + c))
+                    return false;
+            }
+            return true;
+        }
+        public bool CheckStraightLineOrigin(int[][] coordinates)
         {
             if (coordinates == null || coordinates.Length <= 2)
                 return true;
