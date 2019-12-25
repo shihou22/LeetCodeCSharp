@@ -16,6 +16,42 @@ namespace _3Sum_Closest
 
         public int ThreeSumClosest(int[] nums, int target)
         {
+            Array.Sort(nums);
+            int minClose = int.MaxValue;
+            int minDiff = 0;
+            //初期値を0->最後から三番目まで調べる
+            for (int i = 0; i < nums.Length - 2; i++)
+            {
+                int left = i + 1;
+                int right = nums.Length - 1;
+                while (left < right)
+                {
+                    int sum = nums[left] + nums[right] + nums[i];
+                    int close = Math.Abs(target - sum);
+                    if (sum == target)
+                    {
+                        return sum;
+                    }
+                    else if (sum < target)
+                    {
+                        left++;
+                    }
+                    else
+                    {
+                        right--;
+                    }
+                    if (close < minClose)
+                    {
+                        minClose = close;
+                        minDiff = sum;
+                    }
+                }
+
+            }
+            return minDiff;
+        }
+        public int ThreeSumClosestRecursive(int[] nums, int target)
+        {
             helper(nums, 0, 0, 0);
             List<int> res = wk.ToList();
             int min1 = res.Min(c => Math.Abs(c - target));
