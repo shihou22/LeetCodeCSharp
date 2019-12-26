@@ -7,9 +7,43 @@ namespace sample
 
         static void Main(string[] args)
         {
-
-            Console.WriteLine("1: " + fact(4));
-            Console.WriteLine("2: " + fact2(4, 1));
+            Console.WriteLine(getNum(new int[] { 3, 9, 24, 46, 88, 122, 158, 200, 367, 555, 912, 1543, 2323 }));
+            // Console.WriteLine("1: " + fact(4));
+            // Console.WriteLine("2: " + fact2(4, 1));
+        }
+        static int getNum(int[] nums)
+        {
+            int max = 10000;
+            int min = int.MaxValue;
+            int loop = 0;
+            for (int i = 1; i <= max; i++)
+            {
+                for (int j = 1; j <= max; j++)
+                {
+                    int sum = 0;
+                    int a1 = i;
+                    int a2 = j;
+                    sum += Math.Abs(nums[0] - a1);
+                    sum += Math.Abs(nums[1] - a2);
+                    if (sum > min)
+                        continue;
+                    for (int k = 2; k < nums.Length; k++)
+                    {
+                        sum += Math.Abs(nums[k] - (a1 + a2));
+                        int wk = a1;
+                        a1 = a2;
+                        a2 += wk;
+                        if (sum > min)
+                            break;
+                        loop++;
+                    }
+                    if (sum < min)
+                        min = sum;
+                    // Console.WriteLine("i:j = " + sum);
+                }
+            }
+            Console.WriteLine(loop);
+            return min;
         }
 
         static int fact(int i)
