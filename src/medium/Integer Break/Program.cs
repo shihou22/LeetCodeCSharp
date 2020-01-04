@@ -10,8 +10,10 @@ namespace Integer_Break
         }
         public int IntegerBreak(int n)
         {
-            //hoge
-            //fuga
+            /*
+            hoge
+            fuga
+            */
         }
     }
 }
