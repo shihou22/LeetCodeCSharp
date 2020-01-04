@@ -28,6 +28,7 @@ namespace Remove_Nth_Node_From_End_of_List
       while (f != null)
       {
         if (n == -1)
+        //n+1番目からスタートする
           s = s.next;
         else
           n--;
@@ -35,6 +36,7 @@ namespace Remove_Nth_Node_From_End_of_List
         f = f.next;
         Console.WriteLine("n:" + n);
       }
+      //n-1番目まで着たので、n番目を飛ばす
       s.next = s.next.next;
       return dummy.next;
     }
