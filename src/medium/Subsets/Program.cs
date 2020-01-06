@@ -11,6 +11,24 @@ namespace Subsets
             var res = program.SubsetsRecursive(new int[] { 1, 2, 3 });
             Console.WriteLine("Hello World!");
         }
+        public IList<IList<int>> SubsetsBit(int[] nums)
+        {
+            int n = nums.Length;
+            IList<IList<int>> res = new List<IList<int>>();
+            for (int i = 0; i < (Math.Pow(2, n)); i++)
+            {
+                IList<int> tmp = new List<int>();
+                for (int j = 0; j < n; j++)
+                {
+                    if (((i >> j) & 1) == 1)
+                    {
+                        tmp.Add(nums[j]);
+                    }
+                }
+                res.Add(tmp);
+            }
+            return res;
+        }
         public IList<IList<int>> SubsetsRecursive(int[] nums)
         {
             recursiveIterable(nums, 0, new bool[nums.Length], new List<int>());
