@@ -10,10 +10,23 @@ namespace Kth_Largest_Element_in_an_Array
         {
             Program program = new Program();
             //5
-            Console.WriteLine(program.FindKthLargest(new int[] { 3, 2, 1, 5, 6, 4 }, 2)); ;
+            Console.WriteLine(program.FindKthLargestPriorityQueue(new int[] { 3, 2, 1, 5, 6, 4 }, 2)); ;
             //4
-            Console.WriteLine(program.FindKthLargest(new int[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 }, 4)); ;
+            Console.WriteLine(program.FindKthLargestPriorityQueue(new int[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 }, 4)); ;
             Console.WriteLine("Hello World!");
+        }
+        public int FindKthLargestPriorityQueue(int[] nums, int k)
+        {
+            PriorityQueue<int> pq = new PriorityQueue<int>((x, y) => x.CompareTo(y));
+            var res = nums.ToList();
+            res.ForEach(x =>
+            {
+                pq.Enqueue(x);
+                if (pq.Count > k)
+                    pq.Dequeue();
+            });
+
+            return pq.Peek();
         }
         public int FindKthLargest(int[] nums, int k)
         {
