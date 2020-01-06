@@ -8,8 +8,36 @@ namespace Subsets
         static void Main(string[] args)
         {
             Program program = new Program();
-            var res = program.SubsetsRecursive(new int[] { 1, 2, 3 });
+            IList<IList<int>> res = new List<IList<int>>();
+            res = program.SubsetsRecursive(new int[] { 1, 2, 3 });
+            res = program.SubsetsBit(new int[] { 1, 2, 3 });
+            res = program.SubsetsQueue(new int[] { 1, 2, 3 });
             Console.WriteLine("Hello World!");
+        }
+        public IList<IList<int>> SubsetsQueue(int[] nums)
+        {
+            IList<IList<int>> res = new List<IList<int>>();
+
+            Queue<IList<int>> queue = new Queue<IList<int>>();
+            queue.Enqueue(new List<int>());
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int cnt = queue.Count;
+                for (int j = 0; j < cnt; j++)
+                {
+                    IList<int> tmp = queue.Dequeue();
+                    queue.Enqueue(new List<int>(tmp));
+                    IList<int> wk = new List<int>(tmp);
+                    wk.Add(nums[i]);
+                    queue.Enqueue(wk);
+                }
+
+            }
+            foreach (var item in queue)
+            {
+                res.Add(item);
+            }
+            return res;
         }
         public IList<IList<int>> SubsetsBit(int[] nums)
         {
