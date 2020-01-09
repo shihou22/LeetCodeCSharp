@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Divide Two Integers\\Divide Two Integers.csproj",
-      "projectName": "Divide Two Integers",
-      "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Divide Two Integers\\Divide Two Integers.csproj",
+      "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Find Smallest Letter Greater Than Target\\Find Smallest Letter Greater Than Target.csproj",
+      "projectName": "Find Smallest Letter Greater Than Target",
+      "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Find Smallest Letter Greater Than Target\\Find Smallest Letter Greater Than Target.csproj",
       "packagesPath": "C:\\Users\\ryo.suzuki\\.nuget\\packages\\",
-      "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Divide Two Integers\\obj\\",
+      "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Find Smallest Letter Greater Than Target\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

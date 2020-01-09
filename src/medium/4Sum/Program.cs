@@ -30,10 +30,10 @@ namespace _4Sum
                         int wk = nums[i] + nums[j] + nums[k] + nums[l];
                         if (wk == target)
                         {
-                            if (!memo.Contains(nums[i] + "" + nums[j] + "" + nums[k] + "" + nums[l]))
+                            if (!memo.Contains(nums[i] + "-" + nums[j] + "-" + nums[k] + "-" + nums[l]))
                             {
                                 res.Add(new List<int>() { nums[i], nums[j], nums[k], nums[l] });
-                                memo.Add(nums[i] + "" + nums[j] + "" + nums[k] + "" + nums[l]);
+                                memo.Add(nums[i] + "-" + nums[j] + "-" + nums[k] + "-" + nums[l]);
                             }
                             k++;
                             l--;
