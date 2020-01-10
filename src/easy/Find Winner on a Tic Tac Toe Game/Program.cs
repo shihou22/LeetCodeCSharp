@@ -45,25 +45,23 @@ namespace Find_Winner_on_a_Tic_Tac_Toe_Game
             {
                 win = true;
                 int c = map[i][0];
+                if (c == -1)
+                    continue;
                 winC = c;
                 for (int j = 1; j < 3; j++)
                 {
                     if (map[i][j] != c)
                         win = false;
                 }
-                /*
-                誰かが勝っているというよりも以下の状況
-                1   0   1
-                -1  -1  -1
-                -1  -1  -1
-                */
                 if (win)
-                    return c == 1 ? "A" : c == 0 ? "B" : "Pending";
+                    return c == 1 ? "A" : "B";
             }
             for (int i = 0; i < 3; i++)
             {
                 win = true;
                 int c = map[0][i];
+                if (c == -1)
+                    continue;
                 winC = c;
                 for (int j = 1; j < 3; j++)
                 {
@@ -71,14 +69,14 @@ namespace Find_Winner_on_a_Tic_Tac_Toe_Game
                         win = false;
                 }
                 if (win)
-                    return c == 1 ? "A" : c == 0 ? "B" : "Pending";
+                    return c == 1 ? "A" : "B";
             }
-            win = map[0][0] == map[1][1] && map[1][1] == map[2][2];
+            win = map[0][0] != -1 && map[0][0] == map[1][1] && map[1][1] == map[2][2];
             if (win)
-                return map[0][0] == 1 ? "A" : map[0][0] == 0 ? "B" : "Pending";
-            win = map[0][2] == map[1][1] && map[1][1] == map[2][0];
+                return map[0][0] == 1 ? "A" : "B";
+            win = map[0][2] != -1 && map[0][2] == map[1][1] && map[1][1] == map[2][0];
             if (win)
-                return map[0][2] == 1 ? "A" : map[0][2] == 0 ? "B" : "Pending";
+                return map[0][2] == 1 ? "A" : "B";
 
             return moves.Length < 9 ? "Pending" : "Draw";
         }
