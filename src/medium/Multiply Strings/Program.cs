@@ -77,7 +77,7 @@ namespace Multiply_Strings
           wkRes2 = carry + wkRes2;
         res = wkRes2;
       }
-      return res;
+    return res;
     }
   }
 }
