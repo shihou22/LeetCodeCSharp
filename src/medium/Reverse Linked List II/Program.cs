@@ -35,7 +35,7 @@ namespace Reverse_Linked_List_II
       ListNode dummy = new ListNode(-1);
       dummy.next = head;
       List<ListNode> list = new List<ListNode>();
-      helperDummy(dummy, new ListNode(-1), new ListNode(-1), new ListNode(-1), m, n, 0);
+      helperDummy(dummy, null, null, new ListNode(-1), m, n, 0);
       return dummy.next;
     }
 
@@ -46,9 +46,6 @@ namespace Reverse_Linked_List_II
       if (curr == m)
         mm = head;
 
-
-      // list[m - 1].next = list[n];
-      // list[m].next = list[n + 1];
       if (curr == n + 1)
       {
         mm1.next = prev;
