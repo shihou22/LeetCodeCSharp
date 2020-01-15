@@ -55,14 +55,56 @@ namespace Kth_Smallest_Element_in_a_Sorted_Matrix
         static void Main(string[] args)
         {
             Program program = new Program();
-            int[][] args1 = new int[3][];
-            args1[0] = new int[] { 1, 5, 9 };
-            args1[1] = new int[] { 10, 11, 13 };
-            args1[2] = new int[] { 12, 13, 15 };
-            Console.WriteLine(program.KthSmallest(args1, 8));
+            // int[][] args1 = new int[3][];
+            // args1[0] = new int[] { 1, 5, 9 };
+            // args1[1] = new int[] { 10, 11, 13 };
+            // args1[2] = new int[] { 12, 13, 15 };
+            // Console.WriteLine(program.KthSmallest(args1, 8));
+            int[][] args1 = new int[2][];
+            args1[0] = new int[] { 1, 2 };
+            args1[1] = new int[] { 1, 3 };
+            Console.WriteLine(program.KthSmallest(args1, 3));
             Console.WriteLine("Hello World!");
         }
         public int KthSmallest(int[][] matrix, int k)
+        {
+            int n = matrix.Length;
+            int left = matrix[0][0] - 1;
+            int right = matrix[n - 1][n - 1] + 1;
+
+            while (right - left > 1)
+            {
+                int count = 0;
+                int mid = left + (right - left) / 2;
+                foreach (var item in matrix)
+                    count += BinarySearch(item, mid) + 1;
+
+                if (count >= k)
+                    right = mid;
+                else
+                    left = mid;
+            }
+            return right;
+        }
+        private int BinarySearch(int[] array, int target)
+        {
+            if (target < array[0])
+            {
+                return -1; // edge case
+            }
+            int left = -1;
+            int right = array.Length;
+            while (right - left > 1)
+            {
+                int mid = left + (right - left) / 2;
+                if (array[mid] > target)
+                    right = mid;
+                else
+                    left = mid;
+            }
+            return left;
+        }
+        public int KthSmallestUsePriorityQueue(int[][] matrix, int k)
         {
             PriorityQueue<int> pq = new PriorityQueue<int>((x, y) => -x.CompareTo(y));
             foreach (var item in matrix)
