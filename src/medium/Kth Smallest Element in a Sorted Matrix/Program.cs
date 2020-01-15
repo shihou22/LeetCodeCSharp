@@ -79,6 +79,10 @@ namespace Kth_Smallest_Element_in_a_Sorted_Matrix
                 foreach (var item in matrix)
                     count += BinarySearch(item, mid) + 1;
 
+                /*
+                それぞれの配列にmid以下の値がk以上含まれているかを確認する
+                そのmidの値を調べていく
+                */
                 if (count >= k)
                     right = mid;
                 else
