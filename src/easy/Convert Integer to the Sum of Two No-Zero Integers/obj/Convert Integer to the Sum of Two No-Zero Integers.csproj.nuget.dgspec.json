@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Convert Integer to the Sum of Two No-Zero Integers\\Convert Integer to the Sum of Two No-Zero Integers.csproj": {}
+  },
+  "projects": {
+    "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Convert Integer to the Sum of Two No-Zero Integers\\Convert Integer to the Sum of Two No-Zero Integers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Convert Integer to the Sum of Two No-Zero Integers\\Convert Integer to the Sum of Two No-Zero Integers.csproj",
+        "projectName": "Convert Integer to the Sum of Two No-Zero Integers",
+        "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Convert Integer to the Sum of Two No-Zero Integers\\Convert Integer to the Sum of Two No-Zero Integers.csproj",
+        "packagesPath": "C:\\Users\\ryo.suzuki\\.nuget\\packages\\",
+        "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\easy\\Convert Integer to the Sum of Two No-Zero Integers\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ryo.suzuki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
