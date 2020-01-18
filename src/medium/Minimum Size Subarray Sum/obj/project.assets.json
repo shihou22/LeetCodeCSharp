@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\sample\\sample.csproj",
-      "projectName": "sample",
-      "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\sample\\sample.csproj",
+      "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Minimum Size Subarray Sum\\Minimum Size Subarray Sum.csproj",
+      "projectName": "Minimum Size Subarray Sum",
+      "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Minimum Size Subarray Sum\\Minimum Size Subarray Sum.csproj",
       "packagesPath": "C:\\Users\\ryo.suzuki\\.nuget\\packages\\",
-      "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\sample\\obj\\",
+      "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Minimum Size Subarray Sum\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
