@@ -43,13 +43,9 @@ namespace Minimum_Size_Subarray_Sum
             {
                 int mid = left + (right - left) / 2;
                 if (val <= nums[mid])
-                {
                     right = mid;
-                }
                 else
-                {
                     left = mid;
-                }
             }
             return right;
         }
@@ -71,6 +67,8 @@ namespace Minimum_Size_Subarray_Sum
                     res = Math.Min(res, right - i);
                     sum -= nums[i];
                 }
+                if (i == right)
+                    right++;
             }
 
             return res != nums.Length + 1 ? res : 0;
