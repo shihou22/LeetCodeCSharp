@@ -13,6 +13,24 @@ namespace Minimum_Size_Subarray_Sum
             Console.WriteLine(program.MinSubArrayLen(3, new int[] { 1, 1 }));
             Console.WriteLine("Hello World!");
         }
+        public int MinSubArrayLenON4(int s, int[] nums)
+        {
+            int res = int.MaxValue;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int wk = 0;
+                for (int j = i; j < nums.Length; j++)
+                {
+                    wk += nums[j];
+                    if (wk >= s)
+                    {
+                        res = Math.Min(res, j - i + 1);
+                        break;
+                    }
+                }
+            }
+            return res == int.MaxValue ? 0 : res;
+        }
         public int MinSubArrayLen(int s, int[] nums)
         {
             int[] rui = new int[nums.Length + 1];
