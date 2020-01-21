@@ -15,7 +15,28 @@ namespace Find_the_Duplicate_Number
             Console.WriteLine(program.FindDuplicate(new int[] { 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1, 2, 5, 9, 6, 9, 3, 8, 9, 7, 1 }));//3
             Console.WriteLine("Hello World!");
         }
+        /*
+        modify the argument array
+        */
         public int FindDuplicate(int[] nums)
+        {
+            if (nums.Length == 0)
+                return 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int index = Math.Abs(nums[i]);
+                if (nums[index] > 0)
+                {
+                    nums[index] *= -1;
+                }
+                else
+                {
+                    return index;
+                }
+            }
+            return -1;
+        }
+        public int FindDuplicateBitArray(int[] nums)
         {
             BitArray bit = new BitArray(nums.Length);
             for (int i = 0; i < nums.Length; i++)
