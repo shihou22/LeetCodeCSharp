@@ -13,11 +13,11 @@ namespace Odd_Even_Linked_List
     }
     class ListNodeFactory
     {
-        public static ListNode CreateListNode(string nums)
+        public static ListNode CreateListNode(string nums, string delm)
         {
             if (nums == null)
                 return null;
-            string[] tmp = nums.Split("->");
+            string[] tmp = nums.Split(delm);
             List<int> res = new List<int>();
             foreach (var item in tmp)
             {
@@ -46,7 +46,7 @@ namespace Odd_Even_Linked_List
             StringBuilder builder = new StringBuilder();
             while (node != null)
             {
-                builder.Append(node.val);
+                builder.Append(node.val).Append("-");
                 node = node.next;
             }
             return builder.ToString();
@@ -58,16 +58,16 @@ namespace Odd_Even_Linked_List
         {
             Program program = new Program();
             ListNode res = null;
-            res = ListNodeFactory.CreateListNode("1->2->3->4->5->NULL");
+            res = ListNodeFactory.CreateListNode("1->2->3->4->5->NULL", "->");
             res = program.OddEvenList(res);
             Console.WriteLine(ListNodeFactory.ResultStr(res));
-            res = ListNodeFactory.CreateListNode("2->1->3->5->6->4->7->NULL");
+            res = ListNodeFactory.CreateListNode("2->1->3->5->6->4->7->NULL", "->");
             res = program.OddEvenList(res);
             Console.WriteLine(ListNodeFactory.ResultStr(res));
-            res = ListNodeFactory.CreateListNode("2->1->NULL");
+            res = ListNodeFactory.CreateListNode("2->1->NULL", "->");
             res = program.OddEvenList(res);
             Console.WriteLine(ListNodeFactory.ResultStr(res));
-            res = ListNodeFactory.CreateListNode("2->NULL");
+            res = ListNodeFactory.CreateListNode("2->NULL", "->");
             res = program.OddEvenList(res);
             Console.WriteLine(ListNodeFactory.ResultStr(res));
             Console.WriteLine("Hello World!");
