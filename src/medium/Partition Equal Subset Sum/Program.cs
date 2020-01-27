@@ -8,9 +8,9 @@ namespace Partition_Equal_Subset_Sum
         static void Main(string[] args)
         {
             Program program = new Program();
-            Console.WriteLine(program.CanPartition(new int[] { 3, 3, 3, 4, 5 }));//true
-            Console.WriteLine(program.CanPartition(new int[] { 1, 5, 11, 5 }));//true
-            Console.WriteLine(program.CanPartition(new int[] { 1, 2, 3, 5 }));//false
+            Console.WriteLine(program.CanPartitionDP(new int[] { 3, 3, 3, 4, 5 }));//true
+            Console.WriteLine(program.CanPartitionDP(new int[] { 1, 5, 11, 5 }));//true
+            Console.WriteLine(program.CanPartitionDP(new int[] { 1, 2, 3, 5 }));//false
             Console.WriteLine("Hello World!");
         }
         public bool CanPartition(int[] nums)
@@ -32,7 +32,7 @@ namespace Partition_Equal_Subset_Sum
 
         private bool FindTarget(int[] nums, int index, int sum)
         {
-            if (index >= nums.Length)
+            if (index >)
                 return false;
             int delta = sum - nums[index];
             if (delta == 0)
@@ -45,7 +45,7 @@ namespace Partition_Equal_Subset_Sum
                 return false;
             }
 
-            return FindTarget(nums, index + 1, sum);
+            return FindTarget(nums, index - 1, sum);
         }
         public bool CanPartitionDP(int[] nums)
         {
