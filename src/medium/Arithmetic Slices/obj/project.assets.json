@@ -688,32 +688,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ryo.suzuki\\.nuget\\packages\\": {},
+    "C:\\Users\\pc9801bx2\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Arithmetic Slices\\Arithmetic Slices.csproj",
+      "projectUniqueName": "c:\\Pleiades\\workspaceLeetCode\\LeetCodeCSharp\\src\\medium\\Arithmetic Slices\\Arithmetic Slices.csproj",
       "projectName": "Arithmetic Slices",
-      "projectPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Arithmetic Slices\\Arithmetic Slices.csproj",
-      "packagesPath": "C:\\Users\\ryo.suzuki\\.nuget\\packages\\",
-      "outputPath": "C:\\LeetCode\\LeetCodeCSharp\\src\\medium\\Arithmetic Slices\\obj\\",
+      "projectPath": "c:\\Pleiades\\workspaceLeetCode\\LeetCodeCSharp\\src\\medium\\Arithmetic Slices\\Arithmetic Slices.csproj",
+      "packagesPath": "C:\\Users\\pc9801bx2\\.nuget\\packages\\",
+      "outputPath": "c:\\Pleiades\\workspaceLeetCode\\LeetCodeCSharp\\src\\medium\\Arithmetic Slices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ryo.suzuki\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config"
+        "C:\\Users\\pc9801bx2\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\Microsoft SDKs\\Service Fabric\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -731,6 +727,7 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
