@@ -44,12 +44,7 @@ namespace Diagonal_Traverse
             curH = 0;
             curW = wkW;
           }
-          else if (wkH < 0 && wkW >= w)
-          {
-            isUp = false;
-            curH = curH + 1;
-          }
-          else if (wkH >= 0 && wkW >= w)
+          else if (wkH < 0 || wkW >= w)
           {
             isUp = false;
             curH = curH + 1;
@@ -70,12 +65,7 @@ namespace Diagonal_Traverse
             curH = wkH;
             curW = 0;
           }
-          else if (wkH >= h && wkW < 0)
-          {
-            isUp = true;
-            curW = curW + 1;
-          }
-          else if (wkH >= h && wkW >= 0)
+          else if (wkH >= h || wkW < 0)
           {
             isUp = true;
             curW = curW + 1;
