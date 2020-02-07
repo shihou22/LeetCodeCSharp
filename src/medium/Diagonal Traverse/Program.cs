@@ -41,18 +41,17 @@ namespace Diagonal_Traverse
           if (wkH < 0 && wkW < w)
           {
             isUp = false;
-            curH = 0;
-            curW = wkW;
+            curW++;
           }
           else if (wkH < 0 || wkW >= w)
           {
             isUp = false;
-            curH = curH + 1;
+            curH++;
           }
           else
           {
-            curH = wkH;
-            curW = wkW;
+            curH--;
+            curW++;
           }
         }
         else
@@ -62,18 +61,17 @@ namespace Diagonal_Traverse
           if (wkH < h && wkW < 0)
           {
             isUp = true;
-            curH = wkH;
-            curW = 0;
+            curH++;
           }
           else if (wkH >= h || wkW < 0)
           {
             isUp = true;
-            curW = curW + 1;
+            curW++;
           }
           else
           {
-            curH = wkH;
-            curW = wkW;
+            curH++;
+            curW--;
           }
         }
         cnt--;
