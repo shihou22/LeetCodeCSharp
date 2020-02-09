@@ -22,7 +22,8 @@ namespace The_K_Weakest_Rows_in_a_Matrix
     }
     public int[] KWeakestRows(int[][] mat, int k)
     {
-      return mat.Select((val, index) => new Pair<int, int>(val.Where(x => (x == 1)).Count(), index)).OrderBy(x => x.key).Take(k).Select(x => x.val).ToArray();
+      //   return mat.Select((val, index) => new Pair<int, int>(val.Where(x => (x == 1)).Count(), index)).OrderBy(x => x.key).Take(k).Select(x => x.val).ToArray();
+      return mat.Select((val, index) => (val.Where(x => (x == 1)).Count(), index).ToTuple()).OrderBy(x => x.Item1).Take(k).Select(x => x.Item2).ToArray();
     }
   }
 }
