@@ -95,6 +95,34 @@ namespace Vertical_Order_Traversal_of_a_Binary_Tree
         }
         public IList<IList<int>> VerticalTraversal(TreeNode root)
         {
+            List<int[]> map = new List<int[]>();
+            DFS2(map, root, 0, 0);
+            map.Sort((x, y) => x[0].CompareTo(y[0]) == 0 ? x[1].CompareTo(y[1]) == 0 ? x[2].CompareTo(y[2]) : x[1].CompareTo(y[1]) : x[0].CompareTo(y[0]));
+            int prev = map[0][0];
+            IList<IList<int>> res = new List<IList<int>>();
+            var tmpOrd = map.GroupBy(x => x[0]);
+            foreach (var item in tmpOrd)
+            {
+                IList<int> wk = new List<int>();
+                foreach (var wkI in item)
+                {
+                    wk.Add(wkI[2]);
+                }
+                res.Add(wk);
+            }
+            return res;
+        }
+        private void DFS2(List<int[]> map, TreeNode node, int x, int y)
+        {
+            if (node == null)
+                return;
+
+            map.Add(new int[] { x, y, node.val });
+            DFS2(map, node.left, x - 1, y + 1);
+            DFS2(map, node.right, x + 1, y + 1);
+        }
+        public IList<IList<int>> VerticalTraversalDFS(TreeNode root)
+        {
             Dictionary<int, List<Tuple<int, int>>> map = new Dictionary<int, List<Tuple<int, int>>>();
             IList<IList<int>> res = new List<IList<int>>();
             DFS(map, root, 0, 0);
