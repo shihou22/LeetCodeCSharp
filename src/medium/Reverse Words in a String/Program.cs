@@ -24,14 +24,9 @@ namespace Reverse_Words_in_a_String
             for (int i = wk.Length - 1; i >= 0; i--)
             {
                 if (i != 0 && wk[i] != "")
-                {
                     builder.Append(wk[i] + " ");
-                }
                 else
-                {
                     builder.Append(wk[i]);
-                }
-
             }
             return builder.ToString();
         }
