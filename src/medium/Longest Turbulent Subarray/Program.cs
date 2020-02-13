@@ -17,27 +17,27 @@ namespace Longest_Turbulent_Subarray
         }
         public int MaxTurbulenceSize(int[] A)
         {
-            int res = 1;
-            int cntO = 1;
-            int cntE = 1;
+            int res = 0;
+            int cntO = 0;
+            int cntE = 0;
             for (int i = 0; i < A.Length - 1; i++)
             {
                 if (i % 2 == 0)
                 {
                     if (A[i] < A[i + 1])
                     {
-                        cntO = 1;
+                        cntO = 0;
                         cntE++;
                     }
                     else if (A[i] > A[i + 1])
                     {
                         cntO++;
-                        cntE = 1;
+                        cntE = 0;
                     }
                     else
                     {
-                        cntO = 1;
-                        cntE = 1;
+                        cntO = 0;
+                        cntE = 0;
                     }
                 }
                 else
@@ -45,22 +45,22 @@ namespace Longest_Turbulent_Subarray
                     if (A[i] < A[i + 1])
                     {
                         cntO++;
-                        cntE = 1;
+                        cntE = 0;
                     }
                     else if (A[i] > A[i + 1])
                     {
-                        cntO = 1;
+                        cntO = 0;
                         cntE++;
                     }
                     else
                     {
-                        cntO = 1;
-                        cntE = 1;
+                        cntO = 0;
+                        cntE = 0;
                     }
                 }
                 res = Math.Max(res, Math.Max(cntO, cntE));
             }
-            return res;
+            return res + 1;
         }
     }
 }
