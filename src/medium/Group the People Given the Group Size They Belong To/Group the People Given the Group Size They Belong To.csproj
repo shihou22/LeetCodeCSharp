@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Group_the_People_Given_the_Group_Size_They_Belong_To</RootNamespace>
+  </PropertyGroup>
+
+</Project>
