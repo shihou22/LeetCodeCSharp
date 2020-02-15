@@ -90,6 +90,28 @@ namespace Find_Largest_Value_in_Each_Tree_Row
       IList<int> res = new List<int>();
       if (root == null)
         return res;
+      DFS(root, res, 0);
+      return res;
+
+    }
+    public void DFS(TreeNode root, IList<int> res, int depth)
+    {
+      if (root == null)
+        return;
+
+      if (depth == res.Count)
+        res.Add(root.val);
+      else
+        res[depth] = Math.Max(res[depth], root.val);
+
+      DFS(root.left, res, depth + 1);
+      DFS(root.right, res, depth + 1);
+    }
+    public IList<int> LargestValuesBFS(TreeNode root)
+    {
+      IList<int> res = new List<int>();
+      if (root == null)
+        return res;
       Queue<TreeNode> queue = new Queue<TreeNode>();
       queue.Enqueue(root);
       while (queue.Count > 0)
