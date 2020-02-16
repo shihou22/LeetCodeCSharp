@@ -19,19 +19,23 @@ namespace Beautiful_Arrangement
     public int CountArrangement(int N)
     {
       bool[] visited = new bool[N + 1];
-      BFS(N, 1, visited);
+      DFS(N, 1, visited);
       return count;
     }
-    public void BFS(int N, int pos, bool[] visited)
+    public void DFS(int N, int pos, bool[] visited)
     {
+
       if (pos > N)
+      {
         count++;
+        return;
+      }
       for (int i = 1; i <= N; i++)
       {
         if (!visited[i] && (pos % i == 0 || i % pos == 0))
         {
           visited[i] = true;
-          BFS(N, pos + 1, visited);
+          DFS(N, pos + 1, visited);
           visited[i] = false;
         }
       }
