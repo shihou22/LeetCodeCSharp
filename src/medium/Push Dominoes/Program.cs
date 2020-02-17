@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 
 namespace Push_Dominoes
@@ -26,9 +27,6 @@ namespace Push_Dominoes
             int[] towardRight = new int[dominoes.Length];
             int[] towardLeft = new int[dominoes.Length];
             int n = dominoes.Length;
-            int index = 0;
-            int left = index;
-            int right = index;
             for (int i = 0; i < n; i++)
             {
                 towardRight[i] = toward[i] == 'R' ? 1 : 0;
@@ -49,32 +47,17 @@ namespace Push_Dominoes
                 {
                     int tmp = towardRight[i] + towardLeft[i];
                     if (tmp > 0)
-                    {
                         toward[i] = 'L';
-                    }
                     else if (tmp < 0)
-                    {
                         toward[i] = 'R';
-                    }
                 }
                 else if (towardRight[i] > 0)
-                {
                     toward[i] = 'R';
-                }
                 else if (towardLeft[i] < 0)
-                {
                     toward[i] = 'L';
-                }
-
             }
 
-            StringBuilder builder = new StringBuilder();
-            foreach (var item in toward)
-            {
-                builder.Append(item);
-            }
-
-            return builder.ToString();
+            return new string(toward);
         }
     }
 }
