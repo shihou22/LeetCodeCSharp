@@ -73,7 +73,45 @@ namespace Redundant_Connection
             var res2 = program.FindRedundantConnection(arg2);
             Console.WriteLine("Hello World!");
         }
+        ISet<int> visited = new HashSet<int>();
+        int MAX_EDGE_VAL = 1000;
+
         public int[] FindRedundantConnection(int[][] edges)
+        {
+            List<int>[] graph = new List<int>[MAX_EDGE_VAL + 1];
+            for (int i = 0; i <= MAX_EDGE_VAL; i++)
+            {
+                graph[i] = new List<int>();
+            }
+
+            foreach (int[] edge in edges)
+            {
+                visited.Clear();
+                if (!graph[edge[0]].Any() && !graph[edge[1]].Any() && DFS(graph, edge[0], edge[1]))
+                {
+                    return edge;
+                }
+                graph[edge[0]].Add(edge[1]);
+                graph[edge[1]].Add(edge[0]);
+            }
+            return new int[] { };
+        }
+        public bool DFS(List<int>[] graph, int source, int target)
+        {
+            if (!visited.Contains(source))
+            {
+                visited.Add(source);
+                if (source == target)
+                    return true;
+                foreach (int nei in graph[source])
+                {
+                    if (DFS(graph, nei, target))
+                        return true;
+                }
+            }
+            return false;
+        }
+        public int[] FindRedundantConnectionUnionFind(int[][] edges)
         {
             ISet<int> nodes = new HashSet<int>();
             foreach (var item in edges)
