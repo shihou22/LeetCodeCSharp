@@ -10,18 +10,47 @@ namespace Ones_and_Zeroes
         {
             Program program = new Program();
             // 4
-            // Console.WriteLine(program.FindMaxForm(new string[] { "10", "0001", "111001", "1", "0" }, 5, 3));
+            Console.WriteLine(program.FindMaxForm(new string[] { "10", "0001", "111001", "1", "0" }, 5, 3));
             // 2
-            // Console.WriteLine(program.FindMaxForm(new string[] { "10", "0", "1" }, 1, 1));
+            Console.WriteLine(program.FindMaxForm(new string[] { "10", "0", "1" }, 1, 1));
             // 3
-            // Console.WriteLine(program.FindMaxForm(new string[] { "10", "0001", "111001", "1", "0" }, 3, 4));
+            Console.WriteLine(program.FindMaxForm(new string[] { "10", "0001", "111001", "1", "0" }, 3, 4));
             // 45
-            // Console.WriteLine(program.FindMaxForm(new string[] { "011", "1", "11", "0", "010", "1", "10", "1", "1", "0", "0", "0", "01111", "011", "11", "00", "11", "10", "1", "0", "0", "0", "0", "101", "001110", "1", "0", "1", "0", "0", "10", "00100", "0", "10", "1", "1", "1", "011", "11", "11", "10", "10", "0000", "01", "1", "10", "0" }, 44, 39));
-            // 
+            Console.WriteLine(program.FindMaxForm(new string[] { "011", "1", "11", "0", "010", "1", "10", "1", "1", "0", "0", "0", "01111", "011", "11", "00", "11", "10", "1", "0", "0", "0", "0", "101", "001110", "1", "0", "1", "0", "0", "10", "00100", "0", "10", "1", "1", "1", "011", "11", "11", "10", "10", "0000", "01", "1", "10", "0" }, 44, 39));
+            // 35
             Console.WriteLine(program.FindMaxForm(new string[] { "0", "0", "0", "0", "0", "1", "1", "0", "1", "1", "1", "0", "1", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0", "1", "1", "1", "1", "1", "0", "1", "1", "1", "1", "1", "1", "0", "1", "1", "0", "0", "0", "0", "1", "1", "0", "1" }, 52, 12));
             Console.WriteLine("Hello World!");
         }
         public int FindMaxForm(string[] strs, int m, int n)
+        {
+            if (strs == null || strs.Length == 0)
+                return 0;
+            int[][] converted = strs.Select(s =>
+           {
+               int zero = s.Where(x => x == '0').Count();
+               int one = s.Where(x => x == '1').Count();
+               return new int[] { zero, one };
+           }).ToArray();
+
+            int[,,] dp = new int[converted.Length + 1, m + 1, n + 1];
+            for (int i = 1; i <= converted.Length; i++)
+            {
+                for (int j = 0; j <= m; j++)
+                {
+                    for (int k = 0; k <= n; k++)
+                    {
+                        int[] curr = converted[i - 1];
+                        dp[i, j, k] = Math.Max(dp[i, j, k], dp[i - 1, j, k]);
+                        if (j >= curr[0] && k >= curr[1])
+                        {
+                            dp[i, j, k] = Math.Max(dp[i, j, k], dp[i - 1, j - curr[0], k - curr[1]] + 1);
+                        }
+                    }
+                }
+            }
+            return dp[converted.Length, m, n];
+        }
+        public int FindMaxFormTLE(string[] strs, int m, int n)
         {
             res = 0;
             Array.Sort(strs);
