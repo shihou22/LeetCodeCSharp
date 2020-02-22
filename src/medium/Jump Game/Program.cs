@@ -33,15 +33,11 @@ namespace Jump_Game
         {
           int index = queue.Dequeue();
           int length = nums[index];
-          for (int j = 1; j <= length; j++)
+          for (int j = 1; j <= length && index + j < nums.Length; j++)
           {
-            if (index + j >= nums.Length)
-              break;
             if (index + j == nums.Length - 1)
               return true;
-            if (nums[index + j] == 0)
-              continue;
-            if (visited[index + j])
+            if (visited[index + j] || nums[index + j] == 0)
               continue;
             queue.Enqueue(index + j);
             visited[index + j] = true;
