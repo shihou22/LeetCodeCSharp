@@ -71,6 +71,30 @@ namespace Count_Square_Submatrices_with_All_Ones
     }
     public int CountSquares(int[][] matrix)
     {
+      if (matrix.Length == 0 || matrix[0].Length == 0) return 0;
+      int n = matrix.Length;
+      int m = matrix[0].Length;
+      int res = 0;
+      for (int i = 0; i < n; i++)
+      {
+        for (int j = 0; j < m; j++)
+        {
+          if (i == 0 || j == 0 || matrix[i][j] == 0)
+          {
+            res += matrix[i][j];
+            continue;
+          }
+          int min = int.MaxValue;
+          min = Math.Min(Math.Min(min, matrix[i - 1][j - 1])
+          , Math.Min(matrix[i - 1][j], matrix[i][j - 1]));
+          matrix[i][j] = min + 1;
+          res += matrix[i][j];
+        }
+      }
+      return res;
+    }
+    public int CountSquaresIterate(int[][] matrix)
+    {
       int res = 0;
       for (int i = 0; i < matrix.Length; i++)
       {
