@@ -87,28 +87,28 @@ namespace Search_a_2D_Matrix
       if (matrix.Length == 0 || matrix[0].Length == 0)
         return false;
 
-      int rows = matrix.Length;
-      int columns = matrix[0].Length;
+      int row = matrix.Length;
+      int col = matrix[0].Length;
 
       int left = -1;
-      int right = (rows * columns);
+      int right = (row * col);
 
       while (right - left > 1)
       {
         int mid = left + (right - left) / 2;
 
-        int midRow = (mid / columns);
-        int midCol = (mid % columns);
+        int midRow = (mid / col);
+        int midCol = (mid % col);
 
         if (target < matrix[midRow][midCol])
           right = mid;
         else
           left = mid;
       }
-      if (left < 0 || left >= (rows * columns))
+      if (left < 0 || left >= (row * col))
         return false;
-      int resR = (left / columns);
-      int resC = (left % columns);
+      int resR = (left / col);
+      int resC = (left % col);
       return matrix[resR][resC] == target;
     }
     public bool SearchMatrixSlow(int[][] matrix, int target)
