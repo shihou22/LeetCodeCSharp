@@ -7,10 +7,10 @@ namespace Previous_Permutation_With_One_Swap
     static void Main(string[] args)
     {
       Program program = new Program();
-      var res1 = program.PrevPermOpt1(new int[] { 3, 2, 1 });//3,1,2
-      var res2 = program.PrevPermOpt1(new int[] { 1, 1, 5 });//1,1,5
-      var res3 = program.PrevPermOpt1(new int[] { 1, 9, 4, 6, 7 });//1,7,4,6,9
-      var res4 = program.PrevPermOpt1(new int[] { 3, 1, 1, 3 });//1,3,1,3
+    //   var res1 = program.PrevPermOpt1(new int[] { 3, 2, 1 });//3,1,2
+    //   var res2 = program.PrevPermOpt1(new int[] { 1, 1, 5 });//1,1,5
+    //   var res3 = program.PrevPermOpt1(new int[] { 1, 9, 4, 6, 7 });//1,7,4,6,9
+    //   var res4 = program.PrevPermOpt1(new int[] { 3, 1, 1, 3 });//1,3,1,3
       var res5 = program.PrevPermOpt1(new int[] { 3, 1, 1, 3 });//1,3,1,3
       Console.WriteLine("Hello World!");
     }
@@ -27,7 +27,7 @@ namespace Previous_Permutation_With_One_Swap
       int maxNum = 0;
       for (int i = A.Length - 1; i > index; i--)
       {
-        if (maxNum < A[i] && A[i] < A[index])
+        if (maxNum <= A[i] && A[i] < A[index])
         {
           maxNum = A[i];
           maxIdx = i;
