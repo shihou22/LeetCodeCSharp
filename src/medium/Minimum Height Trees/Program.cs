@@ -88,6 +88,9 @@ namespace Minimum_Height_Trees
             var res4 = program.FindMinHeightTrees(4, edges4);//[1,2]
             Console.WriteLine("Hello World!");
         }
+        /*
+        Leafをtrimしていく
+        */
         public IList<int> FindMinHeightTrees(int n, int[][] edges)
         {
             if (edges == null || edges.Length == 0 || edges[0].Length == 0)
@@ -103,8 +106,10 @@ namespace Minimum_Height_Trees
             while (graph.Count > 0)
             {
                 var wk = graph.Where(x => x.Value.Count() == 1).Select(x => x.Key).ToList();
+                //全部1=1でつながっている
                 if (wk.Count == graph.Count)
                     return wk;
+                //何もselec出来なかった=1つの根がgrapの中にいる
                 if (wk.Count == 0)
                     return graph.Keys.ToList();
                 foreach (var item in wk)
