@@ -24,6 +24,7 @@ namespace Car_Fleet
             for (int i = 0; i < position.Length; i++)
                 fleets.Add(new Fleet(position[i], speed[i]));
 
+            //追いつくかの判定ではなく、追いつかれるか？を判定をする。
             fleets.Sort((x, y) =>
             {
                 int positionCmp = -(x.Position).CompareTo(y.Position);
