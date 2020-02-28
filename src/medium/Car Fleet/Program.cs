@@ -10,7 +10,9 @@ namespace Car_Fleet
         {
             Program program = new Program();
             //3
-            Console.WriteLine(program.CarFleet(12, new int[] { 10, 8, 0, 5, 3 }, new int[] { 2, 4, 1, 1, 3 }));
+            // Console.WriteLine(program.CarFleet(12, new int[] { 10, 8, 0, 5, 3 }, new int[] { 2, 4, 1, 1, 3 }));
+            //1
+            Console.WriteLine(program.CarFleet(10, new int[] { 0, 4, 2 }, new int[] { 2, 1, 3 }));
             Console.WriteLine("Hello World!");
         }
         public int CarFleet(int target, int[] position, int[] speed)
@@ -20,14 +22,15 @@ namespace Car_Fleet
 
             List<Fleet> fleets = new List<Fleet>();
             for (int i = 0; i < position.Length; i++)
-                fleets.Add(new Fleet(position[i], speed[i], i));
+                fleets.Add(new Fleet(position[i], speed[i]));
 
             fleets.Sort((x, y) =>
             {
-                if (x.Position == y.Position)
-                    return x.Mile - y.Mile;
-                else
-                    return x.Position - y.Position;
+                int positionCmp = -(x.Position).CompareTo(y.Position);
+                // int positionCmp = (target - x.Position).CompareTo(target - y.Position);
+                if (positionCmp != 0)
+                    return positionCmp;
+                return x.Mile - y.Mile;
             });
             int res = fleets.Count;
             for (int i = 0; i < fleets.Count - 1; i++)
@@ -55,12 +58,10 @@ namespace Car_Fleet
     {
         public int Position;
         public int Mile;
-        List<int> Idx;
-        public Fleet(int position, int mile, int idx)
+        public Fleet(int position, int mile)
         {
             this.Position = position;
             this.Mile = mile;
-            this.Idx = new List<int>() { idx };
         }
     }
 }
