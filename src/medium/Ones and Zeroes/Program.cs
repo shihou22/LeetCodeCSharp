@@ -25,21 +25,21 @@ namespace Ones_and_Zeroes
         {
             if (strs == null || strs.Length == 0)
                 return 0;
-            int[][] converted = strs.Select(s =>
+            int[][] comp = strs.Select(s =>
            {
                int zero = s.Where(x => x == '0').Count();
                int one = s.Where(x => x == '1').Count();
                return new int[] { zero, one };
            }).ToArray();
 
-            int[,,] dp = new int[converted.Length + 1, m + 1, n + 1];
-            for (int i = 1; i <= converted.Length; i++)
+            int[,,] dp = new int[comp.Length + 1, m + 1, n + 1];
+            for (int i = 1; i <= comp.Length; i++)
             {
                 for (int j = 0; j <= m; j++)
                 {
                     for (int k = 0; k <= n; k++)
                     {
-                        int[] curr = converted[i - 1];
+                        int[] curr = comp[i - 1];
                         dp[i, j, k] = Math.Max(dp[i, j, k], dp[i - 1, j, k]);
                         if (j >= curr[0] && k >= curr[1])
                         {
@@ -48,7 +48,7 @@ namespace Ones_and_Zeroes
                     }
                 }
             }
-            return dp[converted.Length, m, n];
+            return dp[comp.Length, m, n];
         }
         public int FindMaxFormTLE(string[] strs, int m, int n)
         {

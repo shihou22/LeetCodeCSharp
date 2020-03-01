@@ -88,10 +88,42 @@ namespace Minimum_Height_Trees
             var res4 = program.FindMinHeightTrees(4, edges4);//[1,2]
             Console.WriteLine("Hello World!");
         }
+        public IList<int> FindMinHeightTrees(int n, int[][] edges)
+        {
+            if (n == 1)
+                return new List<int> { 0 };
+            if (n < 2 || edges == null || edges.Length == 0 || edges[0].Length == 0)
+                return new List<int>();
+            var dic = new Dictionary<int, List<int>>();
+            foreach (var item in edges)
+            {
+                dic.TryAdd(item[0], new List<int>());
+                dic[item[0]].Add(item[1]);
+                dic.TryAdd(item[1], new List<int>());
+                dic[item[1]].Add(item[0]);
+            }
+
+            var leaf = new Queue<int>(dic.Where(d => d.Value.Count == 1).Select(item => item.Key));
+            while (dic.Count > 2)
+            {
+                var nl = new Queue<int>();
+                while (leaf.Count > 0)
+                {
+                    int node = leaf.Dequeue();
+                    int temp = dic[node][0];
+                    dic.Remove(node);
+                    dic[temp].Remove(node);
+                    if (dic[temp].Count == 1)
+                        nl.Enqueue(temp);
+                }
+                leaf = nl;
+            }
+            return leaf.ToList();
+        }
         /*
         Leafをtrimしていく
         */
-        public IList<int> FindMinHeightTrees(int n, int[][] edges)
+        public IList<int> FindMinHeightTreesAccepted(int n, int[][] edges)
         {
             if (edges == null || edges.Length == 0 || edges[0].Length == 0)
                 return new List<int>() { 0 };

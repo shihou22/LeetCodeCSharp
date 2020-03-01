@@ -14,11 +14,11 @@ namespace Base_7
             Console.WriteLine(program.ConvertToBase7(-7));//-10
             Console.WriteLine("Hello World!");
         }
-        public String ConvertToBase7(int n)
+        public String ConvertToBase7(int num)
         {
-            if (n < 0) return "-" + ConvertToBase7(-n);
-            if (n < 7) return n.ToString();
-            return ConvertToBase7(n / 7) + (n % 7).ToString();
+            if (num < 0) return "-" + ConvertToBase7(-num);
+            if (num < 7) return num.ToString();
+            return ConvertToBase7(num / 7) + (num % 7).ToString();
         }
         public string ConvertToBase7Iterate(int num)
         {
