@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>How_Many_Numbers_Are_Smaller_Than_the_Current_Number</RootNamespace>
+  </PropertyGroup>
+
+</Project>
