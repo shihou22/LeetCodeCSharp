@@ -29,36 +29,33 @@ namespace Maximum_Length_of_a_Concatenated_String_with_Unique_Characters
         }
         public int MaxLength(IList<string> arr)
         {
-            int max = Int32.MinValue;
+            int max = 0;
 
             for (int i = 0; i < arr.Count; i++)
             {
-                int tmpMax = GetMax(arr[i], arr, i);
+                int tmpMax = GetMax(arr[i], arr, i + 1);
                 max = Math.Max(max, tmpMax);
             }
 
             return max;
         }
 
-        private int GetMax(string word, IList<string> arr, int currentIndex)
+        private int GetMax(string word, IList<string> arr, int currIdx)
         {
             HashSet<char> letters = new HashSet<char>();
 
-            for (int i = 0; i < word.Length; i++)
+            foreach (var item in word)
             {
-                if (letters.Contains(word[i]))
-                {
+                if (letters.Contains(item))
                     return 0;
-                }
-
-                letters.Add(word[i]);
+                letters.Add(item);
             }
 
             int max = letters.Count;
 
-            for (int i = currentIndex + 1; i < arr.Count; i++)
+            for (int i = currIdx; i < arr.Count; i++)
             {
-                int tempMax = GetMax(word + arr[i], arr, i);
+                int tempMax = GetMax(word + arr[i], arr, i + 1);
                 max = Math.Max(max, tempMax);
             }
 
