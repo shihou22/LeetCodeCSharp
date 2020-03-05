@@ -52,13 +52,9 @@ namespace Numbers_With_Same_Consecutive_Differences
             {
                 int b = curr % 10;
                 if (b + K < 10)
-                {
                     NumsSameConsecDiff(N, currN - 1, K, curr * 10 + (b + K));
-                }
                 if (b - K >= 0)
-                {
                     NumsSameConsecDiff(N, currN - 1, K, curr * 10 + (b - K));
-                }
             }
         }
     }
